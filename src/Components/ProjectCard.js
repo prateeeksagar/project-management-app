@@ -12,11 +12,13 @@ function ProjectCard(props) {
               Status: <b>completed</b>
             </p>
           </div>
-          <div>
-            {/* <a href="#" >  className="btn btn-secondary" */}
-            <Link to="/projectdetails">view</Link>
-            {/* </a> */}
-          </div>
+          <Link to="/projectdetails">
+            <button className="btn btn-secoundary">
+              {/* <a href="#" >  className="btn btn-secondary" */}
+              view
+              {/* </a> */}
+            </button>
+          </Link>
         </div>
       </div>
     </div>
