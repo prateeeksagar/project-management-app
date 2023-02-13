@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 function AddClient(props) {
+  // const [records, setRecords] = useState([]);
+  // const [client, setclient] = useState({
+  //   name: "",
+  //   email: "",
+  //   mobileno: "",
+  // });
+
+  // const handleChange = (e) => {
+  //   setclient({ ...client, [e.target.name]: e.target.value });
+  // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const newRecord = { ...client, id: new Date().getTime().toString() };
+  //   console.log(client);
+  //   setRecords([...records, newRecord]);
+  //   console.log(records);
+  // };
+
   return (
     <>
       {/* Modal */}
@@ -26,21 +44,37 @@ function AddClient(props) {
             </div>
             <div className="modal-body">
               <form>
+                {/*onSubmit={handleSubmit}*/}
                 <div className="mb-3">
                   <label className="form-label">Name</label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    // value={client.name}
+                    // onChange={handleChange}
+                    name="name"
+                  />
                 </div>
-
                 <div className="mb-3">
                   <label className="form-label">Email</label>
-                  <input type="email" className="form-control" />
+                  <input
+                    type="email"
+                    className="form-control"
+                    // value={client.email}
+                    // onChange={handleChange}
+                    name="email"
+                  />
                 </div>
-
                 <div className="mb-4">
                   <label className="form-label">Phone</label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    // value={client.mobileno}
+                    // onChange={handleChange}
+                    name="mobileno"
+                  />
                 </div>
-
                 <button type="submit" className="btn btn-primary">
                   Submit
                 </button>

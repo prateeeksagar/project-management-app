@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./Pages/Home";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Header from "./Components/Header";
 
 import ProjectDetail from "./Pages/ProjectDetail";

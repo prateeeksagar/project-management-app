@@ -2,12 +2,20 @@ import React from "react";
 import Header from "../Components/Header";
 import { BsFillPersonFill, BsFillTelephoneFill } from "react-icons/bs";
 import { AiFillMail } from "react-icons/ai";
+import { Link } from "react-router-dom";
 function ProjectDetail(props) {
   return (
     <div>
       <Header />
       <div className="container py-5 border  rounded mt-5 mb-5">
         <div className="div-row">
+          <div className="text-end mt-0 me-4">
+            <Link to="/">
+              <button type="submit" className="btn btn-secondary">
+                Back
+              </button>
+            </Link>
+          </div>
           <div>
             <h1>eCommerce Website</h1>
             <p>this is discription</p>
