@@ -3,13 +3,37 @@ import React, { useEffect, useState } from "react";
 
 function ClientSection(props) {
   const [client, setClient] = useState([]);
-
+  const [deleteClient, setDeleteClient] = useState(false);
   useEffect(() => {
     axios.get("http://3.108.40.132:1337/api/clients").then((res) => {
       setClient(res.data.data);
     });
-  }, []);
+  }, [deleteClient]);
   // console.log(client);
+
+  const handleDeleteClient = async (id) => {
+    try {
+      setDeleteClient(true);
+      const response = await axios.delete(
+        "http://3.108.40.132:1337/api/clients/" + id,
+
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setDeleteClient(false);
+        // window.location = "/";
+      } else {
+        alert("something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   if (!client) {
     return <p>Loading...</p>;
@@ -35,7 +59,11 @@ function ClientSection(props) {
                 <td>{customer.attributes.email}</td>
                 <td>{customer.attributes.phone}</td>
                 <td>
-                  <button type="button" className="btn btn-danger">
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => handleDeleteClient(customer.id)}
+                  >
                     Delete
                   </button>
                 </td>

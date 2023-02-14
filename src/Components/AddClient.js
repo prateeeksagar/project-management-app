@@ -1,23 +1,44 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 function AddClient(props) {
-  // const [records, setRecords] = useState([]);
-  // const [client, setclient] = useState({
-  //   name: "",
-  //   email: "",
-  //   mobileno: "",
-  // });
+  const [formValue, setformValue] = useState({});
+  const [isformSubmit, setIsFormSubmit] = useState(false);
 
-  // const handleChange = (e) => {
-  //   setclient({ ...client, [e.target.name]: e.target.value });
-  // };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const newRecord = { ...client, id: new Date().getTime().toString() };
-  //   console.log(client);
-  //   setRecords([...records, newRecord]);
-  //   console.log(records);
-  // };
+  const handleChange = (e) => {
+    setformValue({ ...formValue, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setIsFormSubmit(true);
+      const response = await axios.post(
+        "http://3.108.40.132:1337/api/clients",
+        {
+          data: {
+            client_name: formValue.name,
+            email: formValue.email,
+            phone: formValue.phone,
+          },
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setIsFormSubmit(false);
+        window.location = "/";
+      } else {
+        alert("Something went wrong!!!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -43,15 +64,17 @@ function AddClient(props) {
               />
             </div>
             <div className="modal-body">
-              <form>
-                {/*onSubmit={handleSubmit}*/}
+              <form
+                onSubmit={(e) => {
+                  handleSubmit(e);
+                }}
+              >
                 <div className="mb-3">
                   <label className="form-label">Name</label>
                   <input
                     type="text"
                     className="form-control"
-                    // value={client.name}
-                    // onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                     name="name"
                   />
                 </div>
@@ -60,8 +83,7 @@ function AddClient(props) {
                   <input
                     type="email"
                     className="form-control"
-                    // value={client.email}
-                    // onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                     name="email"
                   />
                 </div>
@@ -70,8 +92,7 @@ function AddClient(props) {
                   <input
                     type="text"
                     className="form-control"
-                    // value={client.mobileno}
-                    // onChange={handleChange}
+                    onChange={(e) => handleChange(e)}
                     name="mobileno"
                   />
                 </div>
