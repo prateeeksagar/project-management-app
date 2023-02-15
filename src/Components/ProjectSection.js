@@ -32,7 +32,7 @@ function ProjectSection(props) {
                       Status: <b>{pjt.attributes.status}</b>
                     </p>
                   </div>
-                  <Link to="/projectdetails">
+                  <Link to={`${pjt.id}`}>
                     <button className="btn btn-secoundary">
                       {/* <a href="#" >  className="btn btn-secondary" */}
                       view

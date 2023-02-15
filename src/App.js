@@ -3,7 +3,8 @@ import Home from "./Pages/Home";
 import { createBrowserRouter } from "react-router-dom";
 import Header from "./Components/Header";
 
-import ProjectDetail from "./Pages/ProjectDetail";
+// import ProjectDetail from "./Pages/ProjectDetail";
+import ProjectDetails from "./Pages/ProjectDetail";
 
 function App() {
   return (
@@ -24,14 +25,14 @@ export const appRouter = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/projectdetails",
-        element: <ProjectDetail />,
+        path: "/:id",
+        element: <ProjectDetails />,
       },
     ],
   },
   {
-    path: "/projectdetails",
-    element: <ProjectDetail />,
+    path: "/:id",
+    element: <ProjectDetails />,
   },
 ]);
 

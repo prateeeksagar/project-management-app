@@ -27,7 +27,7 @@ function ProjectCard({ id }) {
               Status: <b>{projectInfo.attributes.status}</b>
             </p>
           </div>
-          <Link to="/projectdetails">
+          <Link to={`/${projectInfo.id}`}>
             <button className="btn btn-secoundary">
               {/* <a href="#" >  className="btn btn-secondary" */}
               view
