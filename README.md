@@ -69,6 +69,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-###Preview and Images
+### Preview and Images
 
-[https://github.com/prateeeksagar/project-management-app/blob/c184e346e8ff632f30c818bd80e170c99df527cb/Screenshot%20from%202023-02-15%2011-45-42.png?raw=true]
+![alt text](https://github.com/prateeeksagar/project-management-app/blob/c184e346e8ff632f30c818bd80e170c99df527cb/Screenshot%20from%202023-02-15%2011-45-42.png?raw=true)
+
+![alt text](https://github.com/prateeeksagar/project-management-app/blob/master/Screenshot%20from%202023-02-15%2011-45-55.png?raw=true)
+
+![alt text](https://github.com/prateeeksagar/project-management-app/blob/e1df391ab0a93087a4ff0fcd060fce6149247b0e/Screenshot%20from%202023-02-15%2011-45-50.png)
+
+![alt text](https://github.com/prateeeksagar/project-management-app/blob/e1df391ab0a93087a4ff0fcd060fce6149247b0e/Screenshot%20from%202023-02-15%2011-45-46.png)
+
+![alt text](https://github.com/prateeeksagar/project-management-app/blob/e1df391ab0a93087a4ff0fcd060fce6149247b0e/Screenshot%20from%202023-02-15%2011-45-42.png)
+
+
+
+
